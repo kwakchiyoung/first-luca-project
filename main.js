@@ -83,6 +83,11 @@ function reset(){ //리셋버튼
 }
 
 function validation(userValue,historyUp,historyDown){ //유효성검사
+
+    if(userValue<1||userValue>100){
+        resultArea.textContent="1과100사이 숫자를 입력해 주세요";
+        return false;
+    }
     if(historyUp.includes(userValue) || historyDown.includes(userValue)){ //history에 있는 값을 입력하면
         resultArea.textContent="병신샷!! 이미 말했지요";
         return false;
@@ -104,12 +109,6 @@ function validation(userValue,historyUp,historyDown){ //유효성검사
             }
         }
     }
+  return true;
     
-
-    if(userValue<1||userValue>100){
-        resultArea.textContent="1과100사이 숫자를 입력해 주세요";
-        return false;
-    }else{
-        return true;
-    }
 }
